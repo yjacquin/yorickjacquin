@@ -1,15 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.yorickjacquin.com/tags/</loc>
-    <priority>0</priority>
+    <loc>https://www.yorickjacquin.com/posts/</loc>
+    <lastmod>2020-04-26T16:59:55+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yorickjacquin.com/posts/2020-03-30_understanding-the-ruby-method-lookup-chain/</loc>
+    <lastmod>2020-04-26T16:59:55+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.yorickjacquin.com/</loc>
-    <priority>0</priority>
+    <lastmod>2020-04-26T16:59:55+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yorickjacquin.com/posts/2020-03-19_get-more-brains-into-your-code/</loc>
+    <lastmod>2020-04-26T16:59:42+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yorickjacquin.com/posts/2020-03-10_top-10-tips-to-hire-developers-tech-profiles/</loc>
+    <lastmod>2020-04-26T16:59:41+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yorickjacquin.com/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/</loc>
+    <lastmod>2020-04-26T16:59:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yorickjacquin.com/posts/2020-02-24_fixing-the-varfolders-error-in-docker-for-mac-v2.2.3/</loc>
+    <lastmod>2020-04-26T16:59:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yorickjacquin.com/tags/</loc>
   </url>
   
 </urlset>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Yorick Jacquin">
+<meta name="description" content="Photo by Krzysztof Niewolny on Unsplash
+Feeling like your Ruby app should be faster? It was better back in the days? Things are not the same anymore? You find yourself looking at other apps backends? Well have you met ruby-prof?ruby-prof is a gem that will shed some light on the speed of your app. With it you can test a whole application or just an obscure block of code and compare within your file the fastest solution for your problem." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#494f5c" />
+<link rel="canonical" href="https://www.yorickjacquin.com/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/" />
+
+
+    <title>
+        
+            Find why your Ruby app is slow with ruby-prof :: Yorick Jacquin 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.753fac8f03736f0edc9be411eb20cee875dd7bb8e73c8155fbf6a629c863f4ca.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Find why your Ruby app is slow with ruby-prof">
+<meta itemprop="description" content="Photo by Krzysztof Niewolny on Unsplash
+Feeling like your Ruby app should be faster? It was better back in the days? Things are not the same anymore? You find yourself looking at other apps backends? Well have you met ruby-prof?ruby-prof is a gem that will shed some light on the speed of your app. With it you can test a whole application or just an obscure block of code and compare within your file the fastest solution for your problem.">
+<meta itemprop="datePublished" content="2020-02-28T19:46:01&#43;00:00" />
+<meta itemprop="dateModified" content="2020-04-26T16:59:37&#43;02:00" />
+<meta itemprop="wordCount" content="723">
+<meta itemprop="image" content="https://www.yorickjacquin.com/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/images/1.jpeg">
+<meta itemprop="image" content="https://www.yorickjacquin.com/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/images/2.gif">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.yorickjacquin.com/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/images/1.jpeg"/>
+
+<meta name="twitter:title" content="Find why your Ruby app is slow with ruby-prof"/>
+<meta name="twitter:description" content="Photo by Krzysztof Niewolny on Unsplash
+Feeling like your Ruby app should be faster? It was better back in the days? Things are not the same anymore? You find yourself looking at other apps backends? Well have you met ruby-prof?ruby-prof is a gem that will shed some light on the speed of your app. With it you can test a whole application or just an obscure block of code and compare within your file the fastest solution for your problem."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-02-28 19:46:01.249 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://www.yorickjacquin.com" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://www.yorickjacquin.com/about/">About</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>4 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://www.yorickjacquin.com/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/">Find why your Ruby app is slow with ruby-prof</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p><img src="/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/images/1.jpeg" alt="image"></p>
+<p>Photo by <a href="https://unsplash.com/@epan5?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Krzysztof Niewolny</a> on <a href="https://unsplash.com/s/photos/snail?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+<p>Feeling like your Ruby app should be <strong>faster</strong>? It was better <strong>back in the days</strong>? Things are not the same anymore? You find yourself <strong>looking at other apps backends</strong>? Well have you met <a href="https://ruby-prof.github.io/"><strong>ruby-prof?</strong></a>ruby-prof is a gem that will <strong>shed some light</strong> on the <strong>speed</strong> of your app. With it you can test a whole application or just an obscure block of code and compare <strong>within your file</strong> the fastest solution for your problem.### So how does it work?</p>
+<p>First, you need to install it:
+<code>gem install ruby-prof</code></p>
+<p>Then, it’s quite easy to use, you can either use it from the command line as follows:
+<code>ruby-prof [options] &amp;lt;script.rb≥ [- -] [script-options]</code></p>
+<p>Or use it from within your files with its convenience API:
+`require 'ruby-prof'</p>
+<h1 id="profile-the-code">profile the code</h1>
+<p>RubyProf.start</p>
+<h1 id="-code-to-profile-">&hellip; code to profile &hellip;</h1>
+<p>result = RubyProf.stop</p>
+<h1 id="print-a-flat-profile-to-text">print a flat profile to text</h1>
+<p>printer = RubyProf::FlatPrinter.new(result)<br>
+printer.print(STDOUT)`</p>
+<p>You will easily find <a href="https://ruby-prof.github.io/">in the doc</a> the different graphs you can use to visualize data from the generated report.### So how can it be useful in day to day life?</p>
+<p>The best usage you can make out of this gem is by analyzing your controllers and especially your API Endpoints.</p>
+<p>You will often find out that your slow performance is not made up, does not always come from slow libraries but may come from unexpected HTTP requests, nested loops that don't need to be nested, etc…</p>
+<p>Let me tell you about my story:</p>
+<blockquote>
+<p>It's christmas, you’re almost alone at work, no one comes asking you a question about this or that, no meetings: <strong>paradise</strong> 🌴&gt; You jump into a <strong>big refactoring</strong> of the core of your app. It's a <strong>make over</strong>: Inheritance, Abstraction, you show off your OOP skills in such a beautiful refact that has more than <strong>1,500</strong> ligns of diff across <strong>20+</strong> files.&gt; The code gets reviewed, approved, you're a <strong>happy</strong> dev. The QA is about to test, tests are all green, code goes to release, release is done. You're an <strong>even happier</strong> dev.&gt; But then we suddenly realize that we lost a tone of performance on a route but my code was not supposed to affect performance that much!</p>
+</blockquote>
+<p><img src="/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/images/2.gif" alt="image"></p>
+<p>You're a <strong>very sad</strong> dev</p>
+<p>The response time was multiplied by <strong>~2000</strong>. 😱</p>
+<p>I look at the code and don't find anything I've done that might come close to that performance loss. My pull request concerned a central service used by our top 3 routes and all those routes were impacted, <strong>it must have been me!</strong><br>
+You look briefly at the content of the release and nothing that could impact the performance… <strong>odd…</strong></p>
+<p>Then I find <strong>ruby-prof</strong>, used the gem with its <strong>convenience API</strong> and I see that what takes the most time by far is <a href="https://github.com/rest-client/rest-client"><strong>rest-client</strong></a>****.
+<code>%self      total      self      wait     child     calls  name                           location   0.03      0.001     0.000     0.000     0.000        1   &amp;lt;Module::RestClient::Utils&amp;gt;#_cgi_parseparam /usr/local/bundle/gems/rest-client-2.0.2/lib/restclient/utils.rb:40   0.01      0.000     0.000     0.000     0.000       11   String#[]   0.00      0.001     0.000     0.000     0.001        1   Enumerator#each   0.00      0.000     0.000     0.000     0.000        1   Class#new   0.00      0.000     0.000     0.000     0.000        2   String#index   0.00      0.000     0.000     0.000     0.000        2   String#strip   0.00      0.000     0.000     0.000     0.000        1   NilClass#nil?   0.00      0.000     0.000     0.000     0.000        1   String#scan   0.00      1.159     0.000     1.158     0.001        1   RubyProf::Profile#_inserted_parent_   0.00      0.000     0.000     0.000     0.000        1   Exception#initialize   0.00      0.000     0.000     0.000     0.000        1   String#count   0.00      0.000     0.000     0.000     0.000        1   Kernel#nil?   0.00      0.000     0.000     0.000     0.000        1   Array#count   0.00      0.000     0.000     0.000     0.000        1   Kernel#block_given?</code></p>
+<p>I spare you the whole report as it spanned across 20 threads…</p>
+<p>But wait, I did not involve any <strong>HTTP</strong> <strong>call,</strong> so I look for the method that ruby-prof reports, and find that it was related to changes made in another file by one of my colleagues.</p>
+<p>The code was making third party HTTP requests, and in some cases within loops! <strong>I found the needle in the haystack!</strong></p>
+<p>The code has been corrected, performance was back to normal (<em>even faster than before the refact</em>) and my <strong>love story</strong> with ruby-prof started!</p>
+<p>I now use it to compare performance before and after a refact, as it may be a useful metric.</p>
+<p>I therefore <strong>strongly recommend</strong> you to keep it warm in your <code>:development</code> group of your Gemfile, as it may save your life one day.</p>
+<h3 id="if-this-article-was-helpful-to-you-feel-free-to--clap--or-share-it-with-you-coworkers-">If this article was helpful to you feel free to 👏 clap 👏 or share it with you coworkers !</h3>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>723 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-02-28 20:46 &#43;0100</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://www.yorickjacquin.com/posts/2020-03-10_top-10-tips-to-hire-developers-tech-profiles/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">Top 10 tips to hire developers &amp; tech profiles</span>
+                            </a>
+                        </span>
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://www.yorickjacquin.com/posts/2020-02-24_fixing-the-varfolders-error-in-docker-for-mac-v2.2.3/">
+                                <span class="button__text">Fixing the var/folders error in Docker for Mac v2.2.3</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://www.yorickjacquin.com">Yorick Jacquin</a></span>
+            
+            <span>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</span>
+            <span> <a href="https://www.yorickjacquin.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>

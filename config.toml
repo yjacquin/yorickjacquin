@@ -2,7 +2,7 @@ baseURL = "https://www.yorickjacquin.com"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Yorick Jacquin"
-theme = "hermit"
+theme = "hello-friend-ng"
 # enableGitInfo = true
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
@@ -62,14 +62,11 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   [[params.social]]
     name = "github"
     url = "https://github.com/yjacquin"
+  [[params.social]]
+    name = "medium"
+    url = "https://medium.com/@yorickjacquin"
 
 [menu]
-
-  [[menu.main]]
-    name = "Posts"
-    url = "posts/"
-    weight = 10
-
   [[menu.main]]
     name = "About"
     url = "about/"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yorick Jacquin</title>
@@ -7,9 +7,69 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 30 Mar 2020 06:34:05 +0000</lastBuildDate>
     
 	<atom:link href="https://www.yorickjacquin.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Understanding the Ruby Method Lookup Chain</title>
+      <link>https://www.yorickjacquin.com/posts/2020-03-30_understanding-the-ruby-method-lookup-chain/</link>
+      <pubDate>Mon, 30 Mar 2020 06:34:05 +0000</pubDate>
+      
+      <guid>https://www.yorickjacquin.com/posts/2020-03-30_understanding-the-ruby-method-lookup-chain/</guid>
+      <description>Unveiling a bit of Ruby’s magic under the hood Photo by Agence Olloweb on Unsplash
+When you call a method in Ruby, a lot of things happen behind the scenes. The Ruby interpreter has to know where this method is declared to know what behavior it has to interpret.
+This process is called the method lookup.
+It goes through the ancestor chain of an object to see where this method is declared.</description>
+    </item>
+    
+    <item>
+      <title>Get more brains into your code</title>
+      <link>https://www.yorickjacquin.com/posts/2020-03-19_get-more-brains-into-your-code/</link>
+      <pubDate>Thu, 19 Mar 2020 09:08:42 +0000</pubDate>
+      
+      <guid>https://www.yorickjacquin.com/posts/2020-03-19_get-more-brains-into-your-code/</guid>
+      <description>A quick guide to get better as a lone developer
+Photo by MD_JERRY on Unsplash
+Looking back on my lone junior dev years, I could still get things done and it’s something I am very proud of.
+But the foundation I was building was crooked. Here’s why: My first professional experience was as a lone dev in his junior years without supervision or guidance.
+I tried to learn best practices by failure or from watching talks or reading articles on the internet.</description>
+    </item>
+    
+    <item>
+      <title>Top 10 tips to hire developers &amp; tech profiles</title>
+      <link>https://www.yorickjacquin.com/posts/2020-03-10_top-10-tips-to-hire-developers-tech-profiles/</link>
+      <pubDate>Tue, 10 Mar 2020 09:03:44 +0000</pubDate>
+      
+      <guid>https://www.yorickjacquin.com/posts/2020-03-10_top-10-tips-to-hire-developers-tech-profiles/</guid>
+      <description>Photo by Carl Heyerdahl on Unsplash
+As a foreword, I would like to say that I am just a regular dev with a sharp sense of observation.
+People in the tech industry all know that the tables turned. Developers are now the golden nuggets every company is chasing as their presence is crucial to the company’s growth and their profile is so rare.
+We live in a constant scarcity of developers, and we (developers) know it.</description>
+    </item>
+    
+    <item>
+      <title>Find why your Ruby app is slow with ruby-prof</title>
+      <link>https://www.yorickjacquin.com/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/</link>
+      <pubDate>Fri, 28 Feb 2020 19:46:01 +0000</pubDate>
+      
+      <guid>https://www.yorickjacquin.com/posts/2020-02-28_find-why-your-ruby-app-is-slow-with-rubyprof/</guid>
+      <description>Photo by Krzysztof Niewolny on Unsplash
+Feeling like your Ruby app should be faster? It was better back in the days? Things are not the same anymore? You find yourself looking at other apps backends? Well have you met ruby-prof?ruby-prof is a gem that will shed some light on the speed of your app. With it you can test a whole application or just an obscure block of code and compare within your file the fastest solution for your problem.</description>
+    </item>
+    
+    <item>
+      <title>Fixing the var/folders error in Docker for Mac v2.2.3</title>
+      <link>https://www.yorickjacquin.com/posts/2020-02-24_fixing-the-varfolders-error-in-docker-for-mac-v2.2.3/</link>
+      <pubDate>Mon, 24 Feb 2020 11:41:35 +0000</pubDate>
+      
+      <guid>https://www.yorickjacquin.com/posts/2020-02-24_fixing-the-varfolders-error-in-docker-for-mac-v2.2.3/</guid>
+      <description>I recently got my former MacBook stolen at a conference and so I had to get a new one from my company and reinstall everything we needed for all our repositories.
+I know, how sad…
+Me knowing I had to go over setting up everything again
+So I go ahead, and install Docker Desktop for Mac as I did a year ago until I realized it has a brand new UI!</description>
+    </item>
     
   </channel>
 </rss>
