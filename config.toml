@@ -39,9 +39,11 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
-  # Prefix of link to the git commit detail page. GitInfo must be enabled.
   # gitUrl = "https://github.com/username/repository/commit/"
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
 
+  [params.logo]
+    logoText = "Available for a mission!"
   # Toggling this option needs to rebuild SCSS, requires Hugo extended version
   justifyContent = false  # Set "text-align: justify" to `.content`.
 
