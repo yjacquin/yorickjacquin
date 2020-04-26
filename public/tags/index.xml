@@ -1,25 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Yorick Jacquin</title>
-    <link>https://example.com/tags/</link>
+    <link>https://www.yorickjacquin.com/tags/</link>
     <description>Recent content in Tags on Yorick Jacquin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 12 Mar 2020 14:25:30 +0100</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.yorickjacquin.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>untagged</title>
-      <link>https://example.com/tags/untagged/</link>
-      <pubDate>Thu, 12 Mar 2020 14:25:30 +0100</pubDate>
-      
-      <guid>https://example.com/tags/untagged/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
